@@ -1,0 +1,21 @@
+# BL0942 Energy Monitoring Module
+# Usage: Include this package in devices using the BL0942 chip for energy monitoring.
+
+uart:
+    tx_pin: GPIO11 # Default TX pin for BL0942 (can be overridden in the main config)
+    rx_pin: GPIO10 # Default RX pin for BL0942 (can be overridden in the main config)
+    baud_rate: 4800 # Default baud rate for BL0942
+
+sensor:
+    - platform: bl0942
+      voltage:
+          name: Voltage
+      current:
+          name: Current
+      power:
+          name: Power
+      energy:
+          name: Energy
+      frequency:
+          name: Frequency
+      update_interval: 10s # Default update interval (can be overridden in the main config)
