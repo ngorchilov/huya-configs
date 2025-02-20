@@ -7,7 +7,6 @@ substitutions:
     bl0937_sel_pin: GPIO11 # Default SEL pin for BL0937 (can be overridden in the main config)
     bl0937_voltage_divider: 775 # Default voltage divider (can be overridden in the main config)
     bl0937_current_resistor: 0.00104 ohm # Default current resistor (can be overridden in the main config)
-    bl0937_update_interval: 10s # Default update interval (can be overridden in the main config)
 
 sensor:
     - platform: hlw8012
@@ -31,4 +30,4 @@ sensor:
           name: Energy
       voltage_divider: ${bl0937_voltage_divider}
       current_resistor: ${bl0937_current_resistor}
-      update_interval: ${bl0937_update_interval}
+      update_interval: 10s
