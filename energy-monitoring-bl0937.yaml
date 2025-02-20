@@ -5,8 +5,8 @@ substitutions:
     bl0937_cf_pin: GPIO6 # Default CF pin for BL0937 (can be overridden in the main config)
     bl0937_cf1_pin: GPIO8 # Default CF1 pin for BL0937 (can be overridden in the main config)
     bl0937_sel_pin: GPIO11 # Default SEL pin for BL0937 (can be overridden in the main config)
-    bl0937_voltage_divider: 775 # Default voltage divider (can be overridden in the main config)
-    bl0937_current_resistor: 0.00104 ohm # Default current resistor (can be overridden in the main config)
+    bl0937_voltage_divider: '775' # Default voltage divider (must be a string)
+    bl0937_current_resistor: '0.00104 ohm' # Default current resistor (must be a string)
 
 sensor:
     - platform: hlw8012
