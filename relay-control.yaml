@@ -1,0 +1,52 @@
+# Relay Control Module
+# Usage: Include this package in devices with a relay, button, and LED.
+
+substitutions:
+    relay_pin: GPIO7 # Default relay pin (can be overridden in the main config)
+    button_pin: GPIO23 # Default button pin (can be overridden in the main config)
+    led_pin: GPIO26 # Default LED pin (can be overridden in the main config)
+
+esphome:
+    on_boot:
+        - if:
+              condition:
+                  switch.is_on: relay_switch
+              then:
+                  - light.turn_on: relay_led
+              else:
+                  - light.turn_off: relay_led
+
+switch:
+    - platform: gpio
+      name: Relay
+      pin: ${relay_pin}
+      id: relay_switch
+      restore_mode: RESTORE_DEFAULT_OFF
+      on_turn_on:
+          - light.turn_on: relay_led
+      on_turn_off:
+          - light.turn_off: relay_led
+
+binary_sensor:
+    - platform: gpio
+      name: Button
+      pin:
+          number: ${button_pin}
+          mode:
+              input: true
+              pullup: true
+          inverted: true
+      on_click:
+          - switch.toggle: relay_switch
+
+light:
+    - platform: binary
+      name: LED
+      id: relay_led
+      output: relay_led_output
+      internal: true
+
+output:
+    - id: relay_led_output
+      platform: gpio
+      pin: ${led_pin}
