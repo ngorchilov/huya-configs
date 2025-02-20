@@ -1,6 +1,6 @@
 substitutions:
-    name: huya-base-cb2s
-    friendly_name: Huya Base CB2S
+    name: base-board-cb2s
+    friendly_name: Base Board CB2S
 
 esphome:
     name: ${name}
