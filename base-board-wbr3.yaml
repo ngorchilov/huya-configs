@@ -1,6 +1,6 @@
 substitutions:
-    name: base-board-cb2s
-    friendly_name: Base Board CB2S
+    name: base-board-wbr3
+    friendly_name: Base Board WBR3
 
 packages:
     Base Board: github://ngorchilov/huya-configs/base-board.yaml
