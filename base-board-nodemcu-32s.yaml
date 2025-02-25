@@ -1,0 +1,9 @@
+substitutions:
+    name: base-board-nodemcu-32s
+    friendly_name: Base Board NodeMCU-32S
+
+packages:
+    Base Board: github://ngorchilov/huya-configs/base-board.yaml
+
+esp32:
+    board: nodemcu-32s
