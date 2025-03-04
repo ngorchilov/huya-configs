@@ -22,7 +22,7 @@ wifi:
 
 captive_portal:
 
-switch:
+button:
     - platform: restart
       name: Restart
 
