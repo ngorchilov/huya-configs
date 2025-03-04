@@ -7,3 +7,8 @@ packages:
 
 rtl87xx:
     board: wbr3
+
+text_sensor:
+    - platform: libretiny
+      version:
+          name: LibreTiny Version

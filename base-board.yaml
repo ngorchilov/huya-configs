@@ -53,8 +53,8 @@ text_sensor:
           id: mac_address
 
     - platform: version
-      name: Version
-#     hide_timestamp: true
+      name: ESPhome Version
+      hide_timestamp: true
 
 time:
     - platform: homeassistant
