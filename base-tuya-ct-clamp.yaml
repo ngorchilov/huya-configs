@@ -148,6 +148,7 @@ number:
       max_value: 60
       step: 1
       unit_of_measurement: s
+      mode: box
       icon: mdi:timer-outline
 
 tuya:
