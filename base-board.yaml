@@ -7,6 +7,7 @@ esphome:
     friendly_name: ${friendly_name}
 
 logger:
+    level: INFO
 
 api:
 
