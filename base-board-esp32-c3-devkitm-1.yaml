@@ -1,6 +1,6 @@
 substitutions:
     name: base-board-esp32-c3-devkitm-1
-    friendly_name: Base Board ESP32-C3-DevKitC-1
+    friendly_name: Base Board ESP32-C3-DevKitM-1
 
 packages:
     Base Board: github://ngorchilov/huya-configs/base-board.yaml
