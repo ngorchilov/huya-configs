@@ -1,0 +1,14 @@
+substitutions:
+    name: base-board-cbu
+    friendly_name: Base Board CBU
+
+packages:
+    Base Board: github://ngorchilov/huya-configs/base-board.yaml
+
+bk72xx:
+    board: cbu
+
+text_sensor:
+    - platform: libretiny
+      version:
+          name: LibreTiny Version
