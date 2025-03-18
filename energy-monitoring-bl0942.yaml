@@ -16,12 +16,17 @@ sensor:
       id: energy_monitor
       voltage:
           name: Voltage
+          id: voltage
       current:
           name: Current
+          id: current
       power:
           name: Power
+          id: power
       energy:
           name: Energy
+          id: energy
       frequency:
           name: Frequency
+          id: frequency
       update_interval: 10s # Default update interval (can be overridden in the main config)
