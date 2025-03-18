@@ -13,6 +13,7 @@ uart:
 
 sensor:
     - platform: bl0942
+      id: energy_monitor
       voltage:
           name: Voltage
       current:
