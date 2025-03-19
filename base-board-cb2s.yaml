@@ -12,3 +12,4 @@ text_sensor:
     - platform: libretiny
       version:
           name: LibreTiny Version
+          id: mcu_version_libretiny

@@ -31,31 +31,39 @@ button:
 sensor:
     - platform: uptime
       name: Uptime
+      id: mcu_uptime
 
     - platform: wifi_signal
       name: WiFi Signal
+      id: mcu_wifi_signal
 
-    - platform: mcu_temperature
+    - platform: temperature
       name: MCU Temperature
+      id: mcu_temperature
 
 binary_sensor:
     - platform: status
       name: Status
+      id: mcu_status
 
 text_sensor:
     - platform: wifi_info
       ip_address:
           name: IP
+          id: mcu_ip
       ssid:
           name: SSID
+          id: mcu_ssid
       bssid:
           name: BSSID
+          id: mcu_bssid
       mac_address:
           name: MAC Address
-          id: mac_address
+          id: mcu_mac_address
 
     - platform: version
       name: ESPhome Version
+      id: mcu_version_esphome
       hide_timestamp: true
 
 time:
