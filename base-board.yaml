@@ -34,8 +34,8 @@ sensor:
     - platform: wifi_signal
       name: WiFi Signal
 
-    - platform: internal_temperature
-      name: Internal Temperature
+    - platform: mcu_temperature
+      name: MCU Temperature
 
 binary_sensor:
     - platform: status
