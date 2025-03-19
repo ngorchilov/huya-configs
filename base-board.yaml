@@ -25,7 +25,8 @@ captive_portal:
 
 button:
     - platform: restart
-      name: Restart
+      name: MCU Restart
+      id: mcu_restart
 
 sensor:
     - platform: uptime
