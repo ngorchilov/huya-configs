@@ -37,7 +37,7 @@ sensor:
       name: WiFi Signal
       id: mcu_wifi_signal
 
-    - platform: temperature
+    - platform: internal_temperature
       name: MCU Temperature
       id: mcu_temperature
 
