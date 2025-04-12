@@ -2,9 +2,13 @@
 # Usage: Include this package in devices with a relay, button, and LED.
 
 substitutions:
-    relay_pin: GPIO7 # Default relay pin (can be overridden in the main config)
-    button_pin: GPIO23 # Default button pin (can be overridden in the main config)
-    led_pin: GPIO26 # Default LED pin (can be overridden in the main config)
+    relay_pin: GPIO7
+    relay_inverted: 'false'
+    button_pin: GPIO23
+    button_pullup: 'true'
+    button_inverted: 'true'
+    led_pin: GPIO26
+    led_inverted: 'false'
 
 esphome:
     on_boot:
@@ -19,7 +23,9 @@ esphome:
 switch:
     - platform: gpio
       name: Relay
-      pin: ${relay_pin}
+      pin:
+        number: ${relay_pin}
+        inverted: ${relay_inverted}
       id: relay_switch
       restore_mode: RESTORE_DEFAULT_OFF
       on_turn_on:
@@ -34,8 +40,8 @@ binary_sensor:
           number: ${button_pin}
           mode:
               input: true
-              pullup: true
-          inverted: true
+              pullup: ${button_pullup}
+          inverted: ${button_inverted}
       on_click:
           - switch.toggle: relay_switch
 
@@ -49,4 +55,6 @@ light:
 output:
     - id: relay_led_output
       platform: gpio
-      pin: ${led_pin}
+      pin:
+        number: ${led_pin}
+        inverted: ${led_inverted}
