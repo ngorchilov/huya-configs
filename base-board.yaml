@@ -21,6 +21,9 @@ wifi:
     ap:
         ssid: Huya-WiFi
 
+mdns:
+    disabled: false
+
 captive_portal:
 
 button:
