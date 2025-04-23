@@ -8,6 +8,7 @@ substitutions:
     bl0937_voltage_divider: '775' # Default voltage divider (must be a string)
     bl0937_current_resistor: '0.00104 ohm' # Default current resistor (must be a string)
     bl0937_current_multiply: '1' # Default current multiplier (must be a string)
+    bl0937_update_interval: '30s' # Default interval for sending measurements
 
 sensor:
     - platform: hlw8012
@@ -38,4 +39,4 @@ sensor:
           id: energy
       voltage_divider: ${bl0937_voltage_divider}
       current_resistor: ${bl0937_current_resistor}
-      update_interval: 10s
+      update_interval: ${bl0937_update_interval}
