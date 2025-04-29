@@ -1,0 +1,15 @@
+substitutions:
+    name: base-board-cb3s
+    friendly_name: Base Board CB3S
+
+packages:
+    Base Board: github://ngorchilov/huya-configs/base-board.yaml
+
+bk72xx:
+    board: cb3s
+
+text_sensor:
+    - platform: libretiny
+      version:
+          name: LibreTiny Version
+          id: mcu_version_libretiny
