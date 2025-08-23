@@ -1,0 +1,11 @@
+substitutions:
+    name: base-board-esp32dev
+    friendly_name: Base Board ESP32 Dev Module
+
+packages:
+    Base Board: github://ngorchilov/huya-configs/base-board.yaml
+
+esp32:
+    board: esp32dev
+    framework:
+        type: esp-idf
