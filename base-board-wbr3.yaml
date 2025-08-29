@@ -6,7 +6,10 @@ packages:
     Base Board: github://ngorchilov/huya-configs/base-board.yaml
 
 rtl87xx:
-    board: wbr3
+    board: generic-rtl8720cf-2mb-992k
+
+sensor:
+    - id: !remove mcu_temperature
 
 text_sensor:
     - platform: libretiny
