@@ -7,6 +7,11 @@ packages:
 
 rtl87xx:
     board: generic-rtl8720cf-2mb-992k
+    framework:
+        version: 0.0.0
+        source: https://github.com/prokoma/libretiny#55aacc8 # add support for ota on rtl8720cf
+
+captive_portal: !remove # incompatible with this source
 
 sensor:
     - id: !remove mcu_temperature
