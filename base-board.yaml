@@ -38,7 +38,6 @@ sensor:
       unit_of_measurement: s
       device_class: duration
       state_class: measurement
-      suggested_display_precision: 0
 
     - platform: wifi_signal
       name: WiFi Signal
