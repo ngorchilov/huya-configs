@@ -73,7 +73,6 @@ text_sensor:
         else                snprintf(buf, sizeof(buf), "%us", s);
         return std::string(buf);
     - platform: wifi_info
-      id: mcu_wifi_info
       ip_address:
           name: IP
           id: mcu_ip
