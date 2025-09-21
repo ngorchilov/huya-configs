@@ -57,13 +57,13 @@ sensor:
     - platform: wifi_signal
       name: WiFi Signal
       id: mcu_wifi_signal
-      filter:
+      filters:
         - delta: 1
 
     - platform: internal_temperature
       name: MCU Temperature
       id: mcu_temperature
-      filter:
+      filters:
         - delta: 1
 
 binary_sensor:
