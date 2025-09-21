@@ -3,13 +3,7 @@ substitutions:
     friendly_name: Base Board CB2S
 
 packages:
-    Base Board: github://ngorchilov/huya-configs/base-board.yaml
+    Base Board Template (LibreTiny): github://ngorchilov/huya-configs/base-board-template-libretiny.yaml
 
 bk72xx:
     board: cb2s
-
-text_sensor:
-    - platform: libretiny
-      version:
-          name: LibreTiny Version
-          id: mcu_version_libretiny

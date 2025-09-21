@@ -1,0 +1,16 @@
+substitutions:
+    name: base-board-template-libretiny-realtek
+    friendly_name: Base Board Template LibreTiny (Realtek)
+
+packages:
+    Base Board Template (LibreTiny): github://ngorchilov/huya-configs/base-board-template-libretiny.yaml
+
+rtl87xx:
+    framework:
+        version: 0.0.0
+        source: https://github.com/prokoma/libretiny#55aacc8 # add support for ota on rtl8720cf
+
+captive_portal: !remove # incompatible with this source
+
+sensor:
+    - id: !remove mcu_temperature

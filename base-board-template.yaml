@@ -1,6 +1,6 @@
 substitutions:
-    name: base-board
-    friendly_name: Base Board
+    name: base-board-template
+    friendly_name: Base Board Template
 
 esphome:
     name: ${name}
@@ -33,19 +33,38 @@ button:
 
 sensor:
     - platform: uptime
-      name: Uptime
-      id: mcu_uptime
+      name: Uptime (s)
+      id: mcu_uptime_s
       unit_of_measurement: s
       device_class: duration
       state_class: measurement
+      disabled_by_default: true
+      on_value: # update the pretty text sensor when the raw value changes
+        then:
+          - lambda: |-
+              const uint32_t secs = (uint32_t)x;
+              uint32_t days  = secs / 86400;
+              uint32_t hours = (secs % 86400) / 3600;
+              uint32_t mins  = (secs % 3600) / 60;
+              uint32_t s     = secs % 60;
+              char buf[48];
+              if (days > 0)       snprintf(buf, sizeof(buf), "%ud %uh %um", days, hours, mins);
+              else if (hours > 0) snprintf(buf, sizeof(buf), "%uh %um %us", hours, mins, s);
+              else if (mins > 0)  snprintf(buf, sizeof(buf), "%um %us", mins, s);
+              else                snprintf(buf, sizeof(buf), "%us", s);
+              id(mcu_uptime).publish_state(std::string(buf));
 
     - platform: wifi_signal
       name: WiFi Signal
       id: mcu_wifi_signal
+      filter:
+        - delta: 1
 
     - platform: internal_temperature
       name: MCU Temperature
       id: mcu_temperature
+      filter:
+        - delta: 1
 
 binary_sensor:
     - platform: status
@@ -53,25 +72,14 @@ binary_sensor:
       id: mcu_status
 
 text_sensor:
-    # Human-friendly uptime string
     - platform: template
-      name: Uptime (pretty)
-      id: mcu_uptime_pretty
-      update_interval: 60s
+      name: Uptime
+      id: mcu_uptime
+      update_interval: never
       icon: mdi:clock-outline
       entity_category: diagnostic
-      lambda: |-
-        const uint32_t secs = (uint32_t) id(mcu_uptime).state;
-        uint32_t days  = secs / 86400;
-        uint32_t hours = (secs % 86400) / 3600;
-        uint32_t mins  = (secs % 3600) / 60;
-        uint32_t s     = secs % 60;
-        char buf[48];
-        if (days > 0)       snprintf(buf, sizeof(buf), "%ud %uh %um", days, hours, mins);
-        else if (hours > 0) snprintf(buf, sizeof(buf), "%uh %um %us", hours, mins, s);
-        else if (mins > 0)  snprintf(buf, sizeof(buf), "%um %us", mins, s);
-        else                snprintf(buf, sizeof(buf), "%us", s);
-        return std::string(buf);
+      lambda: return {};
+
     - platform: wifi_info
       ip_address:
           name: IP

@@ -3,7 +3,7 @@ substitutions:
     friendly_name: Base Board NodeMCU-32S
 
 packages:
-    Base Board: github://ngorchilov/huya-configs/base-board.yaml
+    Base Board Template (ESPHome): github://ngorchilov/huya-configs/base-board-template-esphome.yaml
 
 esp32:
     board: nodemcu-32s

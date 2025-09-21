@@ -3,13 +3,7 @@ substitutions:
     friendly_name: Base Board CBU
 
 packages:
-    Base Board: github://ngorchilov/huya-configs/base-board.yaml
+    Base Board Template (LibreTiny): github://ngorchilov/huya-configs/base-board-template-libretiny.yaml
 
 bk72xx:
     board: cbu
-
-text_sensor:
-    - platform: libretiny
-      version:
-          name: LibreTiny Version
-          id: mcu_version_libretiny

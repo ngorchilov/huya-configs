@@ -1,0 +1,12 @@
+substitutions:
+    name: base-board-template-libretiny
+    friendly_name: Base Board Template LibreTiny
+
+packages:
+    Base Board Template: github://ngorchilov/huya-configs/base-board-template.yaml
+
+text_sensor:
+    - platform: libretiny
+      version:
+          name: LibreTiny Version
+          id: mcu_version_libretiny

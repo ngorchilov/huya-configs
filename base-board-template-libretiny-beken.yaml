@@ -1,0 +1,6 @@
+substitutions:
+    name: base-board-template-libretiny-beken
+    friendly_name: Base Board Template LibreTiny (Beken)
+
+packages:
+    Base Board Template (LibreTiny): github://ngorchilov/huya-configs/base-board-template-libretiny.yaml

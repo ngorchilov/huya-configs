@@ -3,9 +3,7 @@ substitutions:
     friendly_name: Base Board ESP32 Dev Module
 
 packages:
-    Base Board: github://ngorchilov/huya-configs/base-board.yaml
+    Base Board Template (ESPHome): github://ngorchilov/huya-configs/base-board-template-esphome.yaml
 
 esp32:
     board: esp32dev
-    framework:
-        type: esp-idf
