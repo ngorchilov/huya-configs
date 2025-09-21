@@ -10,3 +10,5 @@ text_sensor:
       version:
           name: LibreTiny Version
           id: mcu_version_libretiny
+          entity_category: diagnostic
+          disabled_by_default: true
