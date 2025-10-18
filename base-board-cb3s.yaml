@@ -3,7 +3,7 @@ substitutions:
     friendly_name: Base Board CB3S
 
 packages:
-    Base Board Template (LibreTiny): github://ngorchilov/huya-configs/base-board-template-libretiny.yaml
+    Base Board Template (BEKEN): github://ngorchilov/huya-configs/base-board-template-libretiny-beken.yaml
 
 bk72xx:
     board: cb3s

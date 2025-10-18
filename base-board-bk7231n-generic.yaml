@@ -3,7 +3,7 @@ substitutions:
     friendly_name: Base Board BK7231N Generic
 
 packages:
-    Base Board Template (LibreTiny): github://ngorchilov/huya-configs/base-board-template-libretiny.yaml
+    Base Board Template (BEKEN): github://ngorchilov/huya-configs/base-board-template-libretiny-beken.yaml
 
 bk72xx:
     board: generic-bk7231n-qfn32-tuya
