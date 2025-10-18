@@ -3,7 +3,7 @@ substitutions:
     friendly_name: Base Board ESP32-C3-DevKitM-1
 
 packages:
-    Base Board Template (ESPHome): github://ngorchilov/huya-configs/base-board-template-esphome.yaml
+    Base Board Template (ESP32): github://ngorchilov/huya-configs/base-board-template-esphome-esp32.yaml
 
 esp32:
     board: esp32-c3-devkitm-1
