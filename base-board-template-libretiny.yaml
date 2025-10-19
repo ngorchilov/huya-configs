@@ -1,14 +1,14 @@
 substitutions:
-    name: base-board-template-libretiny
-    friendly_name: Base Board Template LibreTiny
+  name: base-board-template-libretiny
+  friendly_name: Base Board Template LibreTiny
 
 packages:
-    Base Board Template: github://ngorchilov/huya-configs/base-board-template.yaml
+  Base Board Template: github://ngorchilov/huya-configs/base-board-template.yaml
 
 text_sensor:
-    - platform: libretiny
-      version:
-          name: LibreTiny Version
-          id: mcu_version_libretiny
-          entity_category: diagnostic
-          disabled_by_default: true
+  - platform: libretiny
+    version:
+      name: LibreTiny Version
+      id: mcu_version_libretiny
+      entity_category: diagnostic
+      disabled_by_default: true

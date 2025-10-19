@@ -1,9 +1,9 @@
 substitutions:
-    name: base-board-nodemcu-32s
-    friendly_name: Base Board NodeMCU-32S
+  name: base-board-nodemcu-32s
+  friendly_name: Base Board NodeMCU-32S
 
 packages:
-    Base Board Template (ESP32): github://ngorchilov/huya-configs/base-board-template-esphome-esp32.yaml
+  Base Board Template (ESP32): github://ngorchilov/huya-configs/base-board-template-esphome-esp32.yaml
 
 esp32:
-    board: nodemcu-32s
+  board: nodemcu-32s

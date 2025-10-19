@@ -1,10 +1,10 @@
 substitutions:
-    name: base-board-template-esphome-esp32
-    friendly_name: Base Board Template ESPHome (ESP32)
+  name: base-board-template-esphome-esp32
+  friendly_name: Base Board Template ESPHome (ESP32)
 
 packages:
-    Base Board Template (ESPHome): github://ngorchilov/huya-configs/base-board-template-esphome.yaml
+  Base Board Template (ESPHome): github://ngorchilov/huya-configs/base-board-template-esphome.yaml
 
 esp32:
-    framework:
-        type: esp-idf
+  framework:
+    type: esp-idf

@@ -1,9 +1,9 @@
 substitutions:
-    name: base-board-cbu
-    friendly_name: Base Board CBU
+  name: base-board-cbu
+  friendly_name: Base Board CBU
 
 packages:
-    Base Board Template (BEKEN): github://ngorchilov/huya-configs/base-board-template-libretiny-beken.yaml
+  Base Board Template (BEKEN): github://ngorchilov/huya-configs/base-board-template-libretiny-beken.yaml
 
 bk72xx:
-    board: cbu
+  board: cbu

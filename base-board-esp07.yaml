@@ -1,9 +1,9 @@
 substitutions:
-    name: base-board-esp07
-    friendly_name: Base Board ESP07
+  name: base-board-esp07
+  friendly_name: Base Board ESP07
 
 packages:
-    Base Board Template (ESP8266): github://ngorchilov/huya-configs/base-board-template-esphome-esp8266.yaml
+  Base Board Template (ESP8266): github://ngorchilov/huya-configs/base-board-template-esphome-esp8266.yaml
 
 esp8266:
-    board: esp07
+  board: esp07

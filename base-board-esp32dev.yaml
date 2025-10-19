@@ -1,9 +1,9 @@
 substitutions:
-    name: base-board-esp32dev
-    friendly_name: Base Board ESP32 Dev Module
+  name: base-board-esp32dev
+  friendly_name: Base Board ESP32 Dev Module
 
 packages:
-    Base Board Template (ESP32): github://ngorchilov/huya-configs/base-board-template-esphome-esp32.yaml
+  Base Board Template (ESP32): github://ngorchilov/huya-configs/base-board-template-esphome-esp32.yaml
 
 esp32:
-    board: esp32dev
+  board: esp32dev

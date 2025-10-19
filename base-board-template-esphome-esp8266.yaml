@@ -1,12 +1,12 @@
 substitutions:
-    name: base-board-template-esphome-esp8266
-    friendly_name: Base Board Template ESPHome (ESP8266)
+  name: base-board-template-esphome-esp8266
+  friendly_name: Base Board Template ESPHome (ESP8266)
 
 packages:
-    Base Board Template (ESPHome): github://ngorchilov/huya-configs/base-board-template-esphome.yaml
+  Base Board Template (ESPHome): github://ngorchilov/huya-configs/base-board-template-esphome.yaml
 
 logger:
-    baud_rate: 0
+  baud_rate: 0
 
 sensor:
-    - id: !remove mcu_temperature # not available in esp8266
+  - id: !remove mcu_temperature # not available in esp8266

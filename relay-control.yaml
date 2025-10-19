@@ -2,58 +2,58 @@
 # Usage: Include this package in devices with a relay, button, and LED.
 
 substitutions:
-    relay_pin: GPIO7
-    relay_inverted: 'false'
-    button_pin: GPIO23
-    button_inverted: 'true'
-    led_pin: GPIO26
-    led_inverted: 'false'
+  relay_pin: GPIO7
+  relay_inverted: 'false'
+  button_pin: GPIO23
+  button_inverted: 'true'
+  led_pin: GPIO26
+  led_inverted: 'false'
 
 esphome:
-    on_boot:
-        - if:
-              condition:
-                  switch.is_on: relay_switch
-              then:
-                  - light.turn_on: relay_led
-              else:
-                  - light.turn_off: relay_led
-
-switch:
-    - platform: gpio
-      name: Relay
-      pin:
-        number: ${relay_pin}
-        inverted: ${relay_inverted}
-      id: relay_switch
-      restore_mode: RESTORE_DEFAULT_OFF
-      on_turn_on:
+  on_boot:
+    - if:
+        condition:
+          switch.is_on: relay_switch
+        then:
           - light.turn_on: relay_led
-      on_turn_off:
+        else:
           - light.turn_off: relay_led
 
+switch:
+  - platform: gpio
+    name: Relay
+    pin:
+      number: ${relay_pin}
+      inverted: ${relay_inverted}
+    id: relay_switch
+    restore_mode: RESTORE_DEFAULT_OFF
+    on_turn_on:
+      - light.turn_on: relay_led
+    on_turn_off:
+      - light.turn_off: relay_led
+
 binary_sensor:
-    - platform: gpio
-      name: Button
-      pin:
-          number: ${button_pin}
-          mode:
-              input: true
-              pullup: ${button_inverted}
-          inverted: ${button_inverted}
-      on_click:
-          - switch.toggle: relay_switch
+  - platform: gpio
+    name: Button
+    pin:
+      number: ${button_pin}
+      mode:
+        input: true
+        pullup: ${button_inverted}
+      inverted: ${button_inverted}
+    on_click:
+      - switch.toggle: relay_switch
 
 light:
-    - platform: binary
-      name: LED
-      id: relay_led
-      output: relay_led_output
-      internal: true
+  - platform: binary
+    name: LED
+    id: relay_led
+    output: relay_led_output
+    internal: true
 
 output:
-    - id: relay_led_output
-      platform: gpio
-      pin:
-        number: ${led_pin}
-        inverted: ${led_inverted}
+  - id: relay_led_output
+    platform: gpio
+    pin:
+      number: ${led_pin}
+      inverted: ${led_inverted}

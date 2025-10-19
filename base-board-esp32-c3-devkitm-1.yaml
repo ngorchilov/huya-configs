@@ -1,10 +1,10 @@
 substitutions:
-    name: base-board-esp32-c3-devkitm-1
-    friendly_name: Base Board ESP32-C3-DevKitM-1
+  name: base-board-esp32-c3-devkitm-1
+  friendly_name: Base Board ESP32-C3-DevKitM-1
 
 packages:
-    Base Board Template (ESP32): github://ngorchilov/huya-configs/base-board-template-esphome-esp32.yaml
+  Base Board Template (ESP32): github://ngorchilov/huya-configs/base-board-template-esphome-esp32.yaml
 
 esp32:
-    board: esp32-c3-devkitm-1
-    variant: esp32c3
+  board: esp32-c3-devkitm-1
+  variant: esp32c3
