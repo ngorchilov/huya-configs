@@ -44,8 +44,8 @@ binary_sensor:
       mode:
         input: true
         pullup: ${button_inverted}
-        ignore_strapping_warning: ${button_strapping}
       inverted: ${button_inverted}
+      ignore_strapping_warning: ${button_strapping}
     on_click:
       - switch.toggle: relay_switch
 
