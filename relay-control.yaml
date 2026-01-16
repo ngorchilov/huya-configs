@@ -28,7 +28,7 @@ switch:
     pin:
       number: ${relay_pin}
       inverted: ${relay_inverted}
-      ignore_strapping_warning: ${relay_strapping}
+      # ignore_strapping_warning: ${relay_strapping}
     id: relay_switch
     restore_mode: RESTORE_DEFAULT_OFF
     on_turn_on:
@@ -45,7 +45,7 @@ binary_sensor:
         input: true
         pullup: ${button_inverted}
       inverted: ${button_inverted}
-      ignore_strapping_warning: ${button_strapping}
+      # ignore_strapping_warning: ${button_strapping}
     on_click:
       - switch.toggle: relay_switch
 
@@ -62,4 +62,4 @@ output:
     pin:
       number: ${led_pin}
       inverted: ${led_inverted}
-      ignore_strapping_warning: ${led_strapping}
+      # ignore_strapping_warning: ${led_strapping}
