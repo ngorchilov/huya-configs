@@ -6,4 +6,4 @@ packages:
   Base Board: github://ngorchilov/huya-configs/base-board-template-libretiny-realtek.yaml
 
 rtl87xx:
-  board: bw15 # use this instead of generic-rtl8720cf-2mb-992k in order to enable TX0/RX0 pins
+  board: wbr3
