@@ -40,7 +40,6 @@ sensor:
     id: energy_consumed
     unit_of_measurement: kWh
     accuracy_decimals: 2
-    icon: mdi:lightning-bolt
     device_class: energy
     state_class: total_increasing
 
@@ -49,7 +48,6 @@ sensor:
     id: energy_produced
     unit_of_measurement: kWh
     accuracy_decimals: 2
-    icon: mdi:lightning-bolt-outline
     device_class: energy
     state_class: total_increasing
 
@@ -72,28 +70,32 @@ sensor:
     id: energy_consumed_a
     unit_of_measurement: kWh
     accuracy_decimals: 2
-    icon: mdi:lightning-bolt
+    device_class: energy
+    state_class: total_increasing
 
   - platform: template
     name: Energy Produced ${channel_a_name}
     id: energy_produced_a
     unit_of_measurement: kWh
     accuracy_decimals: 2
-    icon: mdi:lightning-bolt-outline
+    device_class: energy
+    state_class: total_increasing
 
   - platform: template
     name: Energy Consumed ${channel_b_name}
     id: energy_consumed_b
     unit_of_measurement: kWh
     accuracy_decimals: 2
-    icon: mdi:lightning-bolt
+    device_class: energy
+    state_class: total_increasing
 
   - platform: template
     name: Energy Produced ${channel_b_name}
     id: energy_produced_b
     unit_of_measurement: kWh
     accuracy_decimals: 2
-    icon: mdi:lightning-bolt-outline
+    device_class: energy
+    state_class: total_increasing
 
   - platform: template
     name: Power Factor ${channel_a_name}
