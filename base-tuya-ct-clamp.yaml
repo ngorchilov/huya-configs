@@ -56,14 +56,16 @@ sensor:
     id: power_a
     unit_of_measurement: W
     accuracy_decimals: 1
-    icon: mdi:flash
+    device_class: power
+    state_class: measurement
 
   - platform: template
     name: Power ${channel_b_name}
     id: power_b
     unit_of_measurement: W
     accuracy_decimals: 1
-    icon: mdi:flash
+    device_class: power
+    state_class: measurement
 
   - platform: template
     name: Energy Consumed ${channel_a_name}
@@ -102,49 +104,56 @@ sensor:
     id: power_factor_a
     unit_of_measurement: '%'
     accuracy_decimals: 0
-    icon: mdi:angle-acute
+    device_class: power_factor
+    state_class: measurement
 
   - platform: template
     name: Power Factor ${channel_b_name}
     id: power_factor_b
     unit_of_measurement: '%'
     accuracy_decimals: 0
-    icon: mdi:angle-acute
+    device_class: power_factor
+    state_class: measurement
 
   - platform: template
     name: Frequency
     id: frequency
     unit_of_measurement: Hz
     accuracy_decimals: 2
-    icon: mdi:cosine-wave
+    device_class: frequency
+    state_class: measurement
 
   - platform: template
     name: Voltage
     id: voltage
     unit_of_measurement: V
     accuracy_decimals: 1
-    icon: mdi:sine-wave
+    device_class: voltage
+    state_class: measurement
 
   - platform: template
     name: Current ${channel_a_name}
     id: current_a
     unit_of_measurement: A
     accuracy_decimals: 3
-    icon: mdi:current-ac
+    device_class: current
+    state_class: measurement
 
   - platform: template
     name: Current ${channel_b_name}
     id: current_b
     unit_of_measurement: A
     accuracy_decimals: 3
-    icon: mdi:current-ac
+    device_class: current
+    state_class: measurement
 
   - platform: template
     name: Total Power
     id: total_power
     unit_of_measurement: W
     accuracy_decimals: 1
-    icon: mdi:flash
+    device_class: power
+    state_class: measurement
 
 number:
   - platform: tuya
@@ -155,7 +164,7 @@ number:
     step: 1
     unit_of_measurement: s
     mode: box
-    icon: mdi:timer-outline
+    device_class: duration
 
 tuya:
   time_id: ha_time
