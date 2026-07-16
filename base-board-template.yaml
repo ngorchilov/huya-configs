@@ -35,8 +35,8 @@ button:
 sensor:
   - platform: uptime
     type: timestamp
-    name: Last Boot
-    id: mcu_last_boot
+    name: Uptime
+    id: mcu_uptime
     time_id: ha_time
     device_class: uptime
     entity_category: diagnostic
