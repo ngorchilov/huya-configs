@@ -34,33 +34,12 @@ button:
 
 sensor:
   - platform: uptime
-    name: Uptime (s)
-    id: mcu_uptime_s
-    device_class: duration
-    unit_of_measurement: s
-    accuracy_decimals: 0
-    state_class: measurement
+    type: timestamp
+    name: Last Boot
+    id: mcu_last_boot
+    time_id: ha_time
+    device_class: uptime
     entity_category: diagnostic
-    disabled_by_default: true
-    on_value: # update the pretty text sensor when the raw value changes
-      then:
-        - lambda: |-
-            const unsigned long secs = static_cast<unsigned long>(x);
-            const unsigned long days = secs / 86400;
-            const unsigned long hours = (secs % 86400) / 3600;
-            const unsigned long mins = (secs % 3600) / 60;
-            const unsigned long s = secs % 60;
-            char buf[48];
-            if (days > 0) {
-              snprintf(buf, sizeof(buf), "%lud %luh %lum", days, hours, mins);
-            } else if (hours > 0) {
-              snprintf(buf, sizeof(buf), "%luh %lum %lus", hours, mins, s);
-            } else if (mins > 0) {
-              snprintf(buf, sizeof(buf), "%lum %lus", mins, s);
-            } else {
-              snprintf(buf, sizeof(buf), "%lus", s);
-            }
-            id(mcu_uptime).publish_state(std::string(buf));
 
   - platform: wifi_signal
     name: WiFi Signal
@@ -95,13 +74,6 @@ binary_sensor:
     disabled_by_default: true
 
 text_sensor:
-  - platform: template
-    name: Uptime
-    id: mcu_uptime
-    entity_category: diagnostic
-    icon: mdi:clock-outline
-    update_interval: never
-
   - platform: wifi_info
     ip_address:
       name: IP
