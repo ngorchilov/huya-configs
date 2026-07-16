@@ -45,25 +45,20 @@ sensor:
     on_value: # update the pretty text sensor when the raw value changes
       then:
         - lambda: |-
-            const uint32_t secs = (uint32_t)x;
-            uint32_t days  = secs / 86400;
-            uint32_t hours = (secs % 86400) / 3600;
-            uint32_t mins  = (secs % 3600) / 60;
-            uint32_t s     = secs % 60;
+            const unsigned long secs = static_cast<unsigned long>(x);
+            const unsigned long days = secs / 86400;
+            const unsigned long hours = (secs % 86400) / 3600;
+            const unsigned long mins = (secs % 3600) / 60;
+            const unsigned long s = secs % 60;
             char buf[48];
             if (days > 0) {
-              snprintf(buf, sizeof(buf), "%lud %luh %lum",
-                       static_cast<unsigned long>(days), static_cast<unsigned long>(hours),
-                       static_cast<unsigned long>(mins));
+              snprintf(buf, sizeof(buf), "%lud %luh %lum", days, hours, mins);
             } else if (hours > 0) {
-              snprintf(buf, sizeof(buf), "%luh %lum %lus",
-                       static_cast<unsigned long>(hours), static_cast<unsigned long>(mins),
-                       static_cast<unsigned long>(s));
+              snprintf(buf, sizeof(buf), "%luh %lum %lus", hours, mins, s);
             } else if (mins > 0) {
-              snprintf(buf, sizeof(buf), "%lum %lus",
-                       static_cast<unsigned long>(mins), static_cast<unsigned long>(s));
+              snprintf(buf, sizeof(buf), "%lum %lus", mins, s);
             } else {
-              snprintf(buf, sizeof(buf), "%lus", static_cast<unsigned long>(s));
+              snprintf(buf, sizeof(buf), "%lus", s);
             }
             id(mcu_uptime).publish_state(std::string(buf));
 
